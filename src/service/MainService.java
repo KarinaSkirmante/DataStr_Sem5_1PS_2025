@@ -3,12 +3,18 @@ package service;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Hashtable;
 
 import model.City;
 
 public class MainService {
 
 	public static void main(String[] args) {
+		System.out.println("---------------------------------------");
+		System.out.println("----------------HASHMAP----------------");
+		System.out.println("---------------------------------------");
+		System.out.println();
+		
 		HashMap<String, City> myHashMap = new HashMap<>();
 		
 		myHashMap.put("Ventspils", new City("Ventspils", 57.97f, 37057, "Vītoliņš"));
@@ -56,7 +62,27 @@ public class MainService {
 		
 		System.out.println("---------------IEGŪT VISAS KURZEMES PILSĒTAS------------------------");
 		System.out.println(myHashMap2.get("Kurzeme"));
-				
+		System.out.println();	
+		System.out.println("---------------------------------------");
+		System.out.println("----------------HASHTABLE--------------");
+		System.out.println("---------------------------------------");
+		System.out.println();
+		
+		
+		Hashtable<String, City> myHashTable = new Hashtable<>();
+		
+		myHashTable.put("Ventspils", new City("Ventspils", 57.97f, 37057, "Vītoliņš"));
+		myHashTable.put("Rīga", new City("Rīga", 307.2f, 605273, "Ķirsis"));
+		myHashTable.put("Talsi", new City("Talsi", 7.85f, 36598 , "Aboliņš"));
+		System.out.println("---------------IEGŪT PILSĒTU-------------------------");
+		System.out.println(myHashTable.get("Talsi"));
+		System.out.println("---------------IZDZĒST PILSĒTU-------------------------");
+		myHashTable.remove("Rīga");
+		System.out.println(myHashTable.get("Rīga"));//null
+		System.out.println("---------------VISAS ATSLĒGAS-------------------------");
+		System.out.println(myHashTable.keySet());
+		
+		myHashTable.put("Liepāja", null);//HashTable gadījuma būs izmests izņēmums
 		
 	}
 
